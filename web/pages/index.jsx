@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 
-const App = () => {
+export default function Home() {
   const { isLoading, error, data, isFetching } = useQuery('', async () => {
     const res = await fetch('http://localhost:3001/');
     return res.json();
@@ -15,6 +15,4 @@ const App = () => {
       <div>{isFetching ? 'Updating...' : ''}</div>
     </div>
   );
-};
-
-export default App;
+}
